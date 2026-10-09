@@ -1,0 +1,390 @@
+
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Мадинанын кыз узатуусу</title>
+
+<!-- WHATSAPP ШИЛТЕМЕСИНИН СҮРӨТҮ -->
+<meta name="description" content="Мадинанын кыз узатуу тоюна чакыруу">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Мадинанын кыз узатуусу">
+<meta property="og:description" content="Сизди өзгөчө кубанычтуу күнүбүзгө чакырабыз">
+<meta property="og:url" content="https://bledi378-blip.github.io/ktz-uzatuu/">
+<meta property="og:image" content="https://bledi378-blip.github.io/ktz-uzatuu/invite.jpg">
+<meta property="og:image:secure_url" content="https://bledi378-blip.github.io/ktz-uzatuu/invite.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Мадинанын кыз узатуусу">
+<meta name="twitter:description" content="Кыз узатуу тоюна чакыруу">
+<meta name="twitter:image" content="https://bledi378-blip.github.io/ktz-uzatuu/invite.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: #4b3568;
+}
+
+#cover {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+    isolation: isolate;
+}
+
+.video-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+#cover::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(48, 25, 75, 0.28),
+        rgba(116, 76, 145, 0.15),
+        rgba(36, 20, 58, 0.30)
+    );
+    z-index: 1;
+}
+
+#cover::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at center,
+        rgba(255,255,255,0.16),
+        transparent 55%
+    );
+    z-index: 2;
+}
+
+.content {
+    position: relative;
+    z-index: 20;
+    padding: 25px;
+    animation: contentShow 2s ease forwards;
+}
+
+.small-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: #ffffff;
+    margin-bottom: 18px;
+    text-shadow: 0 2px 12px rgba(30,15,45,0.45);
+}
+
+.main-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(65px, 15vw, 120px);
+    line-height: 0.95;
+    color: #ffffff;
+    text-shadow:
+        0 3px 20px rgba(30,15,50,0.50),
+        0 0 25px rgba(255,255,255,0.18);
+}
+
+.name {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(55px, 13vw, 95px);
+    line-height: 1;
+    margin-top: 60px;
+    color: #f4eaff;
+    text-shadow:
+        0 3px 18px rgba(30,15,50,0.55),
+        0 0 25px rgba(230,210,255,0.30);
+}
+
+.date {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    letter-spacing: 5px;
+    color: #ffffff;
+    margin-top: 22px;
+    text-shadow: 0 2px 10px rgba(30,15,45,0.55);
+}
+
+.sub-title {
+    font-family: 'Montserrat', sans-serif;
+    max-width: 330px;
+    margin: 20px auto 0;
+    font-size: 11px;
+    line-height: 1.8;
+    letter-spacing: 2px;
+    color: #f8f1ff;
+    text-shadow: 0 2px 10px rgba(30,15,45,0.50);
+}
+
+.enter-btn {
+    margin-top: 34px;
+    padding: 14px 36px;
+    border: 1px solid rgba(255,255,255,0.65);
+    border-radius: 50px;
+    background: rgba(255,255,255,0.16);
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 25px rgba(20,10,35,0.25);
+}
+
+.enter-btn:hover {
+    background: rgba(255,255,255,0.30);
+    transform: scale(1.05);
+    box-shadow: 0 10px 35px rgba(20,10,35,0.35);
+}
+
+.petal {
+    position: absolute;
+    top: -30px;
+    width: 9px;
+    height: 13px;
+    border-radius: 80% 20% 80% 20%;
+    background: linear-gradient(135deg, #f06f6f, #f88cd4);
+    box-shadow: 0 2px 10px rgba(255,255,255,0.35);
+    opacity: 0.85;
+    z-index: 10;
+    pointer-events: none;
+    animation: petalFall linear infinite;
+}
+
+@keyframes petalFall {
+    0% {
+        transform: translateY(-40px) translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.85;
+    }
+    50% {
+        transform: translateY(50vh) translateX(55px) rotate(180deg);
+    }
+    100% {
+        transform: translateY(110vh) translateX(-60px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.light {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow:
+        0 0 8px #ffffff,
+        0 0 18px #dcbfff,
+        0 0 28px #b995d8;
+    z-index: 11;
+    animation: sparkle 3s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0.15;
+        transform: scale(0.6);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+
+@keyframes contentShow {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .content {
+        padding: 20px;
+    }
+
+    .small-title {
+        font-size: 9px;
+        letter-spacing: 3px;
+        margin-bottom: 14px;
+    }
+
+    .main-title {
+        font-size: 67px;
+    }
+
+    .name {
+        font-size: 58px;
+        margin-top: 10px;
+    }
+
+    .date {
+        font-size: 12px;
+        letter-spacing: 4px;
+        margin-top: 18px;
+    }
+
+    .sub-title {
+        font-size: 9px;
+        max-width: 290px;
+        letter-spacing: 1.5px;
+        margin-top: 17px;
+    }
+
+    .enter-btn {
+        margin-top: 28px;
+        padding: 13px 30px;
+        font-size: 10px;
+    }
+}
+
+@media (max-height: 700px) {
+    .main-title {
+        font-size: 98px;
+    }
+
+    .name {
+        font-size: 80px;
+    }
+
+    .date {
+        margin-top: 12px;
+    }
+
+    .sub-title {
+        margin-top: 12px;
+    }
+
+    .enter-btn {
+        margin-top: 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="cover">
+
+    <video
+        class="video-bg"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto">
+        <source src="video.mp4" type="video/mp4">
+    </video>
+
+    <div class="content">
+
+        <div class="small-title"></div>
+
+        <div class="main-title">
+            Кыз узатуу
+        </div>
+
+        <div class="name">
+            Мадина
+        </div>
+
+        <div class="date">
+            23.10.2026
+        </div>
+
+        <div class="sub-title"></div>
+
+        <button class="enter-btn" id="enterBtn">
+            ЧАКЫРУУНУ АЧУУ
+        </button>
+
+    </div>
+</div>
+
+<audio id="music" loop preload="auto">
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const cover = document.getElementById("cover");
+
+for (let i = 0; i < 28; i++) {
+    const petal = document.createElement("div");
+    petal.className = "petal";
+    petal.style.left = Math.random() * 100 + "%";
+    petal.style.animationDuration = (7 + Math.random() * 8) + "s";
+    petal.style.animationDelay = Math.random() * 10 + "s";
+
+    const size = 0.5 + Math.random() * 0.8;
+    petal.style.transform = "scale(" + size + ")";
+
+    cover.appendChild(petal);
+}
+
+for (let i = 0; i < 18; i++) {
+    const light = document.createElement("div");
+    light.className = "light";
+    light.style.left = Math.random() * 100 + "%";
+    light.style.top = Math.random() * 100 + "%";
+    light.style.animationDelay = Math.random() * 3 + "s";
+
+    cover.appendChild(light);
+}
+
+document.getElementById("enterBtn").addEventListener("click", function () {
+    const music = document.getElementById("music");
+
+    music.play().catch(function(error) {
+        console.log("Музыка башталган жок:", error);
+    });
+
+    setTimeout(function() {
+        window.location.href =
+            "https://kyz-uzatuumadina.tilda.ws/page288496503.html";
+    }, 700);
+});
+</script>
+
+</body>
+</html>
